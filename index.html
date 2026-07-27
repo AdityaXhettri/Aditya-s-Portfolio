@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Chettri — Full-Stack Developer & AI Enthusiast</title>
+  <meta name="description" content="Portfolio of Aditya Chettri, B.Tech CSE student building modern web applications, AI-powered solutions, and real-world software projects." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: {
+              900: '#0a0a0f',
+              800: '#101019',
+              700: '#161623',
+              600: '#1f1f2e',
+              500: '#2a2a3d',
+            },
+            accent: {
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          animation: {
+            'gradient-x': 'gradient-x 8s ease infinite',
+            'fade-up': 'fade-up 0.8s ease-out',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+          },
+          keyframes: {
+            'gradient-x': {
+              '0%, 100%': { 'background-position': '0% 50%' },
+              '50%': { 'background-position': '100% 50%' },
+            },
+            'fade-up': {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            'float': {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #0a0a0f; color: #e5e7eb; }
+    .gradient-text {
+      background: linear-gradient(90deg, #a78bfa, #60a5fa, #a78bfa);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: gradient-x 6s ease infinite;
+    }
+    .glass {
+      background: rgba(22, 22, 35, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(167, 139, 250, 0.1);
+    }
+    .glow {
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+    }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(167, 139, 250, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(167, 139, 250, 0.06) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: all 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0f; }
+    ::-webkit-scrollbar-thumb { background: #2a2a3d; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #8b5cf6; }
+    /* Chat scroll */
+    .chat-scroll::-webkit-scrollbar { width: 4px; }
+    .chat-scroll::-webkit-scrollbar-thumb { background: #4b5563; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="font-bold text-xl tracking-tight">
+        <span class="gradient-text">AC</span><span class="text-white">.</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+        <a href="#skills" class="text-gray-300 hover:text-white transition">Skills</a>
+        <a href="#projects" class="text-gray-300 hover:text-white transition">Projects</a>
+        <a href="#experience" class="text-gray-300 hover:text-white transition">Experience</a>
+        <a href="#blog" class="text-gray-300 hover:text-white transition">Blog</a>
+        <a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a>
+      </div>
+      <a href="#contact" class="hidden md:inline-block px-4 py-2 text-sm font-medium bg-accent-500 hover:bg-accent-600 rounded-lg transition">Hire Me</a>
+      <button id="menuBtn" class="md:hidden text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/5">
+      <div class="px-6 py-4 flex flex-col gap-4 text-sm">
+        <a href="#about" class="text-gray-300 hover:text-white">About</a>
+        <a href="#skills" class="text-gray-300 hover:text-white">Skills</a>
+        <a href="#projects" class="text-gray-300 hover:text-white">Projects</a>
+        <a href="#experience" class="text-gray-300 hover:text-white">Experience</a>
+        <a href="#blog" class="text-gray-300 hover:text-white">Blog</a>
+        <a href="#contact" class="text-gray-300 hover:text-white">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 grid-bg opacity-50"></div>
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1.5s"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 py-20 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full glass text-sm animate-fade-up">
+        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+        <span class="text-gray-300">Open to internships & freelance work</span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 animate-fade-up" style="animation-delay: 0.1s">
+        Hi, I'm <span class="gradient-text">Aditya Chettri</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-4 animate-fade-up" style="animation-delay: 0.2s">
+        Full-Stack Developer & AI Enthusiast
+      </p>
+
+      <p class="text-base md:text-lg text-gray-500 max-w-2xl mx-auto mb-8 animate-fade-up" style="animation-delay: 0.3s">
+        I build modern web applications, AI-powered solutions, and real-world software products.
+        <span class="text-accent-400 font-medium">Live for an NGO.</span>
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 animate-fade-up" style="animation-delay: 0.4s">
+        <a href="#projects" class="px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white rounded-lg font-medium transition shadow-lg shadow-accent-500/30">
+          View My Work
+        </a>
+        <a href="#contact" class="px-6 py-3 glass hover:bg-white/5 text-white rounded-lg font-medium transition">
+          Get in Touch
+        </a>
+      </div>
+
+      <div class="mt-12 flex items-center justify-center gap-6 text-gray-400 animate-fade-up" style="animation-delay: 0.5s">
+        <a href="#" class="hover:text-white transition" aria-label="GitHub">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="#" class="hover:text-white transition" aria-label="LinkedIn">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:your.email@example.com" class="hover:text-white transition" aria-label="Email">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">About <span class="gradient-text">Me</span></h2>
+        <div class="w-16 h-1 bg-accent-500 mx-auto rounded-full"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <div class="aspect-square max-w-sm mx-auto rounded-2xl bg-gradient-to-br from-accent-500/30 to-blue-500/30 p-1 glow">
+            <div class="w-full h-full rounded-2xl bg-ink-800 flex items-center justify-center overflow-hidden">
+              <!-- Placeholder avatar -->
+              <div class="text-7xl font-bold gradient-text">AC</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="text-gray-300 text-lg leading-relaxed mb-4">
+            I'm a third-year <span class="text-white font-medium">B.Tech Computer Science Engineering</span> student passionate about building modern web applications, AI-powered solutions, and real-world software projects.
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-4">
+            I enjoy transforming ideas into functional digital products using clean code and modern technologies. My primary interests include Full-Stack Development, Artificial Intelligence, Software Engineering, and Automation.
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            So far, I've delivered a <span class="text-accent-400 font-medium">live freelance website for an NGO</span> — my first paid project — and built a football tournament management platform, gaining hands-on experience in responsive design, user-focused interfaces, and deployment.
+          </p>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="glass p-4 rounded-lg text-center">
+              <div class="text-2xl font-bold gradient-text">3+</div>
+              <div class="text-xs text-gray-400 mt-1">Projects Shipped</div>
+            </div>
+            <div class="glass p-4 rounded-lg text-center">
+              <div class="text-2xl font-bold gradient-text">1</div>
+              <div class="text-xs text-gray-400 mt-1">Paid Client</div>
+            </div>
+            <div class="glass p-4 rounded-lg text-center">
+              <div class="text-2xl font-bold gradient-text">3rd</div>
+              <div class="text-xs text-gray-400 mt-1">Year CSE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-20 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Skills & <span class="gradient-text">Tech Stack</span></h2>
+        <p class="text-gray-400">Tools I use to ship production-ready products</p>
+        <div class="w-16 h-1 bg-accent-500 mx-auto rounded-full mt-3"></div>
+      </div>
+
+      <div class="space-y-10 reveal">
+
+        <!-- 01 Languages -->
+        <div class="grid grid-cols-[80px_1fr] gap-4 items-start">
+          <div class="pt-2">
+            <span class="text-xs font-mono text-accent-400 block">01</span>
+            <h3 class="text-sm font-semibold text-white tracking-wide uppercase mt-1">Languages</h3>
+          </div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">Python</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">Java</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 Frontend -->
+        <div class="grid grid-cols-[80px_1fr] gap-4 items-start">
+          <div class="pt-2">
+            <span class="text-xs font-mono text-accent-400 block">02</span>
+            <h3 class="text-sm font-semibold text-white tracking-wide uppercase mt-1">Frontend</h3>
+          </div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">HTML5</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">CSS3</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">Tailwind</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">React</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 Backend -->
+        <div class="grid grid-cols-[80px_1fr] gap-4 items-start">
+          <div class="pt-2">
+            <span class="text-xs font-mono text-accent-400 block">03</span>
+            <h3 class="text-sm font-semibold text-white tracking-wide uppercase mt-1">Backend</h3>
+          </div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">Node.js</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" class="w-10 h-10" style="filter: brightness(0) invert(1);" />
+              <span class="text-xs text-gray-300">Express</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square relative">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" class="w-10 h-10" />
+              <span class="text-xs text-accent-300">FastAPI</span>
+              <span class="absolute top-1.5 right-1.5 text-[9px] font-mono text-accent-400 bg-accent-500/10 border border-accent-500/30 px-1.5 py-0.5 rounded">learning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 Databases -->
+        <div class="grid grid-cols-[80px_1fr] gap-4 items-start">
+          <div class="pt-2">
+            <span class="text-xs font-mono text-accent-400 block">04</span>
+            <h3 class="text-sm font-semibold text-white tracking-wide uppercase mt-1">Databases</h3>
+          </div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">MongoDB</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 Tools -->
+        <div class="grid grid-cols-[80px_1fr] gap-4 items-start">
+          <div class="pt-2">
+            <span class="text-xs font-mono text-accent-400 block">05</span>
+            <h3 class="text-sm font-semibold text-white tracking-wide uppercase mt-1">Tools</h3>
+          </div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">Git</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-10 h-10" style="filter: brightness(0) invert(1);" />
+              <span class="text-xs text-gray-300">GitHub</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="w-10 h-10" />
+              <span class="text-xs text-gray-300">VS Code</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 AI -->
+        <div class="grid grid-cols-[80px_1fr] gap-4 items-start">
+          <div class="pt-2">
+            <span class="text-xs font-mono text-accent-400 block">06</span>
+            <h3 class="text-sm font-semibold text-white tracking-wide uppercase mt-1">AI</h3>
+          </div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <svg class="w-10 h-10 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+              <span class="text-xs text-gray-300">AI APIs</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <svg class="w-10 h-10 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+              <span class="text-xs text-gray-300">Prompts</span>
+            </div>
+            <div class="glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:border-accent-500/40 transition aspect-square">
+              <svg class="w-10 h-10 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span class="text-xs text-gray-300">Automation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-20 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="text-gray-400">Real-world products I've built and shipped</p>
+        <div class="w-16 h-1 bg-accent-500 mx-auto rounded-full mt-3"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Project 1 - NGO (Featured) -->
+        <div class="md:col-span-2 glass rounded-2xl overflow-hidden hover:border-accent-500/40 transition group reveal">
+          <div class="relative h-64 bg-gradient-to-br from-accent-500/30 via-blue-500/20 to-purple-500/30 flex items-center justify-center">
+            <div class="text-6xl font-bold text-white/20">NGO</div>
+            <div class="absolute top-4 left-4 px-3 py-1 bg-green-500/20 border border-green-500/40 rounded-full text-xs text-green-300 font-medium flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+              Live · First Paid Client
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">NGO Website — Freelance</h3>
+            <p class="text-gray-400 mb-4">
+              A complete responsive website built for an NGO as my first paid freelance project. Includes modern UI, optimized performance, and deployed to production for real users.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 text-xs bg-accent-500/10 border border-accent-500/30 rounded-full text-accent-300">HTML</span>
+              <span class="px-3 py-1 text-xs bg-accent-500/10 border border-accent-500/30 rounded-full text-accent-300">CSS</span>
+              <span class="px-3 py-1 text-xs bg-accent-500/10 border border-accent-500/30 rounded-full text-accent-300">JavaScript</span>
+              <span class="px-3 py-1 text-xs bg-accent-500/10 border border-accent-500/30 rounded-full text-accent-300">Responsive</span>
+            </div>
+            <div class="flex gap-3">
+              <a href="#" class="px-4 py-2 bg-accent-500 hover:bg-accent-600 text-white text-sm rounded-lg transition">Live Demo</a>
+              <a href="#" class="px-4 py-2 glass hover:bg-white/5 text-white text-sm rounded-lg transition">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass rounded-2xl overflow-hidden hover:border-accent-500/40 transition group reveal">
+          <div class="relative h-48 bg-gradient-to-br from-blue-500/30 to-cyan-500/20 flex items-center justify-center">
+            <div class="text-5xl font-bold text-white/20">⚽</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Football Tournament Manager</h3>
+            <p class="text-gray-400 mb-4">
+              A web platform to manage football tournaments — team registration, fixtures, live scores, and standings.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 text-xs bg-accent-500/10 border border-accent-500/30 rounded-full text-accent-300">React</span>
+              <span class="px-3 py-1 text-xs bg-accent-500/10 border border-accent-500/30 rounded-full text-accent-300">Node.js</span>
+              <span class="px-3 py-1 text-xs bg-accent-500/10 border border-accent-500/30 rounded-full text-accent-300">MongoDB</span>
+            </div>
+            <div class="flex gap-3">
+              <a href="#" class="px-4 py-2 bg-accent-500 hover:bg-accent-600 text-white text-sm rounded-lg transition">Live Demo</a>
+              <a href="#" class="px-4 py-2 glass hover:bg-white/5 text-white text-sm rounded-lg transition">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass rounded-2xl overflow-hidden hover:border-accent-500/40 transition group reveal">
+          <div class="relative h-48 bg-gradient-to-br from-purple-500/30 to-pink-500/20 flex items-center justify-center">
+            <div class="text-5xl font-bold text-white/20">��</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">AI-Powered Automation Tool</h3>
+            <p class="text-gray-400 mb-4">
+              Automation project integrating AI APIs for smart workflows. Built to explore prompt engineering and AI integrations.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 text-xs bg-accent-500/10 border border-accent-500/30 rounded-full text-accent-300">Python</span>
+              <span class="px-3 py-1 text-xs bg-accent-500/10 border border-accent-500/30 rounded-full text-accent-300">FastAPI</span>
+              <span class="px-3 py-1 text-xs bg-accent-500/10 border border-accent-500/30 rounded-full text-accent-300">AI API</span>
+            </div>
+            <div class="flex gap-3">
+              <a href="#" class="px-4 py-2 bg-accent-500 hover:bg-accent-600 text-white text-sm rounded-lg transition">Live Demo</a>
+              <a href="#" class="px-4 py-2 glass hover:bg-white/5 text-white text-sm rounded-lg transition">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-20 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Experience & <span class="gradient-text">Achievements</span></h2>
+        <div class="w-16 h-1 bg-accent-500 mx-auto rounded-full mt-3"></div>
+      </div>
+
+      <div class="space-y-6 reveal">
+        <div class="glass p-6 rounded-2xl hover:border-accent-500/40 transition border-l-4 border-l-accent-500">
+          <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+            <h3 class="text-lg font-semibold text-white">Deloitte Virtual Internship</h3>
+            <span class="text-xs text-gray-400 px-3 py-1 bg-white/5 rounded-full">Completed</span>
+          </div>
+          <p class="text-sm text-accent-400 mb-2">Software Engineering Track</p>
+          <p class="text-gray-400 text-sm">
+            Gained exposure to professional workflows, business problem-solving, and industry practices through a structured virtual internship program.
+          </p>
+        </div>
+
+        <div class="glass p-6 rounded-2xl hover:border-accent-500/40 transition border-l-4 border-l-blue-500">
+          <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+            <h3 class="text-lg font-semibold text-white">Hackathon Participant</h3>
+            <span class="text-xs text-gray-400 px-3 py-1 bg-white/5 rounded-full">Completed</span>
+          </div>
+          <p class="text-sm text-accent-400 mb-2">Team-based Competition</p>
+          <p class="text-gray-400 text-sm">
+            Built a project under time pressure alongside a team, strengthening collaboration, communication, and problem-solving skills.
+          </p>
+        </div>
+
+        <div class="glass p-6 rounded-2xl hover:border-accent-500/40 transition border-l-4 border-l-green-500">
+          <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+            <h3 class="text-lg font-semibold text-white">Freelance Web Developer — NGO</h3>
+            <span class="text-xs text-gray-400 px-3 py-1 bg-white/5 rounded-full">Live · Paid</span>
+          </div>
+          <p class="text-sm text-accent-400 mb-2">First Paid Client</p>
+          <p class="text-gray-400 text-sm">
+            Built and delivered a complete responsive website for an NGO. Earned my first freelance income and shipped a real product to production.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" class="py-20 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Latest <span class="gradient-text">Writings</span></h2>
+        <p class="text-gray-400">Thoughts on development, AI, and learning</p>
+        <div class="w-16 h-1 bg-accent-500 mx-auto rounded-full mt-3"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 reveal">
+        <article class="glass p-6 rounded-2xl hover:border-accent-500/40 transition group cursor-pointer">
+          <div class="text-xs text-accent-400 mb-2">Coming Soon</div>
+          <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-accent-400 transition">How I Landed My First Paid Freelance Project</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Lessons from building a website for an NGO — what I learned about client communication, deadlines, and shipping.
+          </p>
+          <div class="flex items-center justify-between text-xs text-gray-500">
+            <span>5 min read</span>
+            <span>Web Dev</span>
+          </div>
+        </article>
+
+        <article class="glass p-6 rounded-2xl hover:border-accent-500/40 transition group cursor-pointer">
+          <div class="text-xs text-accent-400 mb-2">Coming Soon</div>
+          <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-accent-400 transition">Prompt Engineering Basics for Developers</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            A practical intro to designing prompts that get reliable, useful output from AI APIs.
+          </p>
+          <div class="flex items-center justify-between text-xs text-gray-500">
+            <span>7 min read</span>
+            <span>AI</span>
+          </div>
+        </article>
+
+        <article class="glass p-6 rounded-2xl hover:border-accent-500/40 transition group cursor-pointer">
+          <div class="text-xs text-accent-400 mb-2">Coming Soon</div>
+          <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-accent-400 transition">My 3rd-Year CSE Roadmap</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Skills, projects, and habits I'm focusing on to land a software engineering internship and freelance work.
+          </p>
+          <div class="flex items-center justify-between text-xs text-gray-500">
+            <span>6 min read</span>
+            <span>Career</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Get in <span class="gradient-text">Touch</span></h2>
+        <p class="text-gray-400">Open to internships, freelance, and collaboration</p>
+        <div class="w-16 h-1 bg-accent-500 mx-auto rounded-full mt-3"></div>
+      </div>
+
+      <div class="glass p-8 rounded-2xl reveal">
+        <!--
+          ⚙️  Replace YOUR_ACCESS_KEY_HERE with your Web3Forms access key.
+          Get one free at https://web3forms.com
+        -->
+        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" class="space-y-5">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+          <input type="hidden" name="subject" value="New Portfolio Message" />
+          <input type="checkbox" name="botcheck" class="hidden" />
+
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm text-gray-300 mb-2">Name</label>
+              <input type="text" name="name" required class="w-full px-4 py-3 bg-ink-900 border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-500 transition" placeholder="Your name" />
+            </div>
+            <div>
+              <label class="block text-sm text-gray-300 mb-2">Email</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 bg-ink-900 border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-500 transition" placeholder="you@example.com" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm text-gray-300 mb-2">Message</label>
+            <textarea name="message" rows="5" required class="w-full px-4 py-3 bg-ink-900 border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-500 transition resize-none" placeholder="Tell me about your project or opportunity..."></textarea>
+          </div>
+
+          <button type="submit" class="w-full px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white rounded-lg font-medium transition shadow-lg shadow-accent-500/30">
+            Send Message
+          </button>
+
+          <div id="formStatus" class="text-center text-sm"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500">
+      <p>© <span id="year"></span> Aditya Chettri. Built with HTML, Tailwind CSS & a lot of ☕</p>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Contact form
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      status.textContent = 'Sending...';
+      status.className = 'text-center text-sm text-gray-400';
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+        const json = await res.json();
+        if (json.success) {
+          status.textContent = '✅ Message sent! I\'ll get back to you soon.';
+          status.className = 'text-center text-sm text-green-400';
+          form.reset();
+        } else {
+          status.textContent = '❌ Failed to send. Please email me directly.';
+          status.className = 'text-center text-sm text-red-400';
+        }
+      } catch {
+        status.textContent = '❌ Network error. Please email me directly.';
+        status.className = 'text-center text-sm text-red-400';
+      }
+    });
+
+  </script>
+</body>
+</html>
