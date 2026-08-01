@@ -73,8 +73,8 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-6">
-                  <a href="#" className="btn-link">Live demo <span aria-hidden>→</span></a>
-                  <a href="#" className="btn-link text-neutral-700">Source <span aria-hidden>→</span></a>
+                  <a href="https://dikshawelfare.com/" target="_blank" rel="noopener noreferrer" className="btn-link">Live demo <span aria-hidden>→</span></a>
+                  <a href="https://dikshawelfare.com/" target="_blank" rel="noopener noreferrer" className="btn-link text-neutral-700">Source <span aria-hidden>→</span></a>
                 </div>
               </div>
             </article>

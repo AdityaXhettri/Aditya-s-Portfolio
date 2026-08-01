@@ -12,6 +12,9 @@ export default function About() {
               <br />
               <span style={{ fontStyle: 'italic' }}>introduction.</span>
             </div>
+            <div className="mt-8 aspect-square max-w-[16rem] overflow-hidden border border-ink/15 rounded-2xl">
+              <img src="/me.jpg" alt="Aditya Chettri" className="w-full h-full object-cover" />
+            </div>
           </div>
 
           <div className="md:col-span-8 reveal">
