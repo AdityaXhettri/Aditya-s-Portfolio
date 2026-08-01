@@ -53,7 +53,7 @@ export default function Skills() {
                 <div className="text-xs font-mono text-neutral-700">{cat.n}</div>
               </div>
               <div>
-                <div className="text-sm uppercase tracking-widest text-ink mb-4 font-medium">{cat.title}</div>
+                <div className="text-sm uppercase tracking-widest mb-4 font-medium" style={{ color: '#0a0a0a' }}>{cat.title}</div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
                   {cat.items.map((item) => (
                     <div key={item.name} className="border border-ink/15 rounded-lg p-4 flex flex-col items-center justify-center gap-2 hover:border-ink/40 transition aspect-square relative" style={{ backgroundColor: '#ebe6dc' }}>
