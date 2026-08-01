@@ -18,7 +18,8 @@ export default function Hero() {
           className="mb-8 max-w-5xl leading-[0.9]"
           style={{ ...SERIF, fontSize: 'clamp(3rem, 10vw, 9rem)', color: '#0a0a0a' }}
         >
-          Where ideas<br />
+          <span style={{ backgroundColor: 'rgba(10, 10, 10, 0.12)', padding: '0 0.3em', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>Where ideas</span>
+          <br />
           <span style={{ fontStyle: 'italic', color: '#0a0a0a' }}>take shape.</span>
         </h1>
 
