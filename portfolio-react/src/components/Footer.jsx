@@ -8,7 +8,7 @@ export default function Footer() {
           Aditya<span style={{ fontStyle: 'italic' }}>.</span>
         </div>
         <div className="text-xs text-neutral-700">
-          © {new Date().getFullYear()} · Built with React, Vite, Bun.
+          © {new Date().getFullYear()} · Designed & built by Aditya Chettri.
         </div>
         <div className="flex items-center gap-4 text-sm">
           <a href="https://github.com/AdityaXhettri" target="_blank" rel="noopener noreferrer" className="btn-link text-neutral-800">GitHub</a>
