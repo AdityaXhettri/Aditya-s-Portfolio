@@ -40,7 +40,7 @@ export default function Blog() {
         <div className="divide-y divide-ink/10 reveal">
           {posts.map((p, i) => (
             <article key={p.title} className="grid md:grid-cols-12 gap-6 py-10 group cursor-pointer">
-              <div className="md:col-span-2 text-sm text-neutral-700 font-mono">0{i + 1} — {p.cat}</div>
+              <div className="md:col-span-2 text-neutral-700 font-mono" style={{ fontSize: '1.1rem' }}>0{i + 1} — {p.cat}</div>
               <div className="md:col-span-7">
                 <h3 style={{ ...SERIF, fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', color: '#0a0a0a', marginBottom: '0.75rem' }} className="group-hover:italic transition">{p.title}</h3>
                 <p className="text-neutral-800 max-w-2xl">{p.desc}</p>
