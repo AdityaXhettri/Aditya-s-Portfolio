@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import Lightbox from './Lightbox';
+
 const SERIF = { fontFamily: '"Instrument Serif", Georgia, serif', fontWeight: 400, letterSpacing: '-0.02em' };
 
 const projects = [
@@ -7,7 +10,7 @@ const projects = [
     sub: 'Freelance · First paid client',
     desc: 'A complete responsive website built for an NGO. Modern UI, optimized performance, deployed to production for real users.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
-    cover: null,
+    cover: '/ngo.png',
   },
   {
     title: 'Football Tournament Manager',
@@ -26,6 +29,8 @@ const projects = [
 ];
 
 export default function Projects() {
+  const [lightbox, setLightbox] = useState(null);
+
   return (
     <section id="projects" className="py-32 border-t border-ink/10" style={{ backgroundColor: '#f5f1ea' }}>
       <div className="max-w-6xl mx-auto px-6">
@@ -46,9 +51,16 @@ export default function Projects() {
               style={{ backgroundColor: '#ebe6dc' }}
             >
               <div
-                className={`relative ${p.featured ? 'h-72' : 'h-56'} bg-cover bg-center flex items-center justify-center`}
-                style={p.cover ? { backgroundImage: `url(${p.cover})` } : undefined}
+                className={`relative ${p.featured ? 'h-72' : 'h-56'} bg-center flex items-center justify-center overflow-hidden group/cover`}
+                style={p.cover ? { cursor: 'zoom-in' } : undefined}
+                onClick={p.cover ? () => setLightbox(p.cover) : undefined}
               >
+                {p.cover && (
+                  <div
+                    className="absolute inset-0 transition-transform duration-500 group-hover/cover:scale-105"
+                    style={{ backgroundImage: `url(${p.cover})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  ></div>
+                )}
                 {!p.cover && <div className="absolute inset-0" style={{ backgroundColor: '#d4cec0' }}></div>}
                 {!p.cover && (
                   <div className="text-7xl relative" style={{ ...SERIF, color: 'rgba(10,10,10,0.15)' }}>
@@ -81,6 +93,8 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
+      <Lightbox src={lightbox} onClose={() => setLightbox(null)} />
     </section>
   );
 }
