@@ -1,3 +1,5 @@
+const SERIF = { fontFamily: '"Instrument Serif", Georgia, serif', fontWeight: 400, letterSpacing: '-0.02em' };
+
 const experiences = [
   {
     title: 'Deloitte Virtual Internship',
@@ -22,23 +24,25 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-32 paper-bg border-t border-ink/10">
+    <section id="experience" className="py-32 border-t border-ink/10" style={{ backgroundColor: '#f5f1ea' }}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-12 gap-12 mb-16 reveal">
           <div className="md:col-span-4">
-            <div className="text-xs uppercase tracking-[0.3em] text-neutral-600 mb-4">Experience</div>
-            <div className="font-serif-display text-5xl text-ink">A short <span className="italic-serif">trail.</span></div>
+            <div className="text-xs uppercase tracking-[0.3em] text-neutral-700 mb-4">Experience</div>
+            <div style={{ ...SERIF, fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: '#0a0a0a', lineHeight: 1.05 }}>
+              A short <span style={{ fontStyle: 'italic' }}>trail.</span>
+            </div>
           </div>
         </div>
 
         <div className="divide-y divide-ink/10 reveal">
           {experiences.map((e) => (
             <div key={e.title} className="grid md:grid-cols-12 gap-6 py-8 group">
-              <div className="md:col-span-3 text-sm text-neutral-600 uppercase tracking-wider">{e.period}</div>
+              <div className="md:col-span-3 text-sm text-neutral-700 uppercase tracking-wider">{e.period}</div>
               <div className="md:col-span-7">
-                <h3 className="font-serif-display text-2xl md:text-3xl text-ink mb-1">{e.title}</h3>
-                <div className="text-sm text-neutral-600 italic-serif mb-3">{e.role}</div>
-                <p className="text-neutral-700 max-w-2xl">{e.desc}</p>
+                <h3 style={{ ...SERIF, fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', color: '#0a0a0a', marginBottom: '0.25rem' }}>{e.title}</h3>
+                <div className="text-sm text-neutral-700 mb-3" style={{ ...SERIF, fontStyle: 'italic' }}>{e.role}</div>
+                <p className="text-neutral-800 max-w-2xl">{e.desc}</p>
               </div>
               <div className="md:col-span-2 flex md:justify-end items-start">
                 {e.highlight && (

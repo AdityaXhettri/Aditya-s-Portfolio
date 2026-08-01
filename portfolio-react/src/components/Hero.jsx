@@ -1,24 +1,32 @@
 import TextStorm from './TextStorm';
 
+const SERIF = { fontFamily: '"Instrument Serif", Georgia, serif', fontWeight: 400, letterSpacing: '-0.02em' };
+
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen paper-bg overflow-hidden pt-24 pb-12">
+    <section id="home" className="relative min-h-screen overflow-hidden pt-24 pb-12" style={{ backgroundColor: '#f5f1ea' }}>
+      {/* Text storm on the right half */}
       <TextStorm />
 
-      <div className="relative max-w-6xl mx-auto px-6 pt-12">
-        <div className="text-xs uppercase tracking-[0.3em] text-neutral-600 mb-6">
+      {/* Content overlay */}
+      <div className="relative max-w-6xl mx-auto px-6 pt-12" style={{ zIndex: 10 }}>
+        <div className="text-xs uppercase tracking-[0.3em] text-neutral-700 mb-6">
           Portfolio · 2026
         </div>
 
-        <h1 className="font-serif-display text-[18vw] md:text-[10vw] leading-[0.9] text-ink mb-8 max-w-5xl">
+        <h1
+          className="text-ink mb-8 max-w-5xl leading-[0.9]"
+          style={{ ...SERIF, fontSize: 'clamp(3rem, 10vw, 9rem)' }}
+        >
           Where ideas<br />
-          <span className="italic-serif">take shape.</span>
+          <span style={{ fontStyle: 'italic' }}>take shape.</span>
         </h1>
 
         <div className="flex flex-wrap items-end justify-between gap-8 mt-12">
-          <p className="max-w-md text-neutral-700 text-lg leading-relaxed">
-            <span className="italic-serif text-ink">Full-stack developer</span> building modern web apps, AI-powered tools, and real-world software products.
-            <span className="block mt-2 text-sm text-neutral-600">Live for an NGO.</span>
+          <p className="max-w-md text-neutral-800 text-lg leading-relaxed">
+            <span style={{ ...SERIF, fontStyle: 'italic', color: '#0a0a0a' }}>Full-stack developer</span>{' '}
+            building modern web apps, AI-powered tools, and real-world software products.
+            <span className="block mt-2 text-sm text-neutral-700">Live for an NGO.</span>
           </p>
 
           <div className="flex flex-wrap items-center gap-6">

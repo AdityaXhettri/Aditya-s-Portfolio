@@ -1,3 +1,5 @@
+const SERIF = { fontFamily: '"Instrument Serif", Georgia, serif', fontWeight: 400, letterSpacing: '-0.02em' };
+
 const posts = [
   {
     tag: 'Coming soon',
@@ -24,25 +26,27 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="py-32 paper-bg border-t border-ink/10">
+    <section id="blog" className="py-32 border-t border-ink/10" style={{ backgroundColor: '#f5f1ea' }}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-12 gap-12 mb-16 reveal">
           <div className="md:col-span-4">
-            <div className="text-xs uppercase tracking-[0.3em] text-neutral-600 mb-4">Writings</div>
-            <div className="font-serif-display text-5xl text-ink">Notes from <span className="italic-serif">the work.</span></div>
+            <div className="text-xs uppercase tracking-[0.3em] text-neutral-700 mb-4">Writings</div>
+            <div style={{ ...SERIF, fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: '#0a0a0a', lineHeight: 1.05 }}>
+              Notes from <span style={{ fontStyle: 'italic' }}>the work.</span>
+            </div>
           </div>
         </div>
 
         <div className="divide-y divide-ink/10 reveal">
           {posts.map((p, i) => (
             <article key={p.title} className="grid md:grid-cols-12 gap-6 py-10 group cursor-pointer">
-              <div className="md:col-span-2 text-sm text-neutral-600 font-mono">0{i + 1} — {p.cat}</div>
+              <div className="md:col-span-2 text-sm text-neutral-700 font-mono">0{i + 1} — {p.cat}</div>
               <div className="md:col-span-7">
-                <h3 className="font-serif-display text-2xl md:text-3xl text-ink mb-3 group-hover:italic transition">{p.title}</h3>
-                <p className="text-neutral-700 max-w-2xl">{p.desc}</p>
+                <h3 style={{ ...SERIF, fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', color: '#0a0a0a', marginBottom: '0.75rem' }} className="group-hover:italic transition">{p.title}</h3>
+                <p className="text-neutral-800 max-w-2xl">{p.desc}</p>
               </div>
               <div className="md:col-span-3 flex md:justify-end items-start">
-                <span className="text-xs text-neutral-600 uppercase tracking-wider">{p.time}</span>
+                <span className="text-xs text-neutral-700 uppercase tracking-wider">{p.time}</span>
               </div>
             </article>
           ))}

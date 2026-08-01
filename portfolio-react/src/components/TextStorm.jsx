@@ -20,24 +20,24 @@ export default function TextStorm() {
       h = rect.height;
       canvas.width = w * dpr;
       canvas.height = h * dpr;
-      ctx.scale(dpr, dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
     const spawn = () => {
       // Spawn from right side, flowing toward the left-bottom
       const x = w + Math.random() * 80;
-      const y = Math.random() * h * 0.5;
+      const y = Math.random() * h * 0.55;
       const size = 8 + Math.random() * 22;
       return {
         x,
         y,
-        z: Math.random(),           // depth for size + opacity
+        z: Math.random(),
         vx: -(0.4 + Math.random() * 1.2),
         vy: 0.3 + Math.random() * 0.8,
         size,
         char: CHARS[Math.floor(Math.random() * CHARS.length)],
         opacity: 0,
-        target: 0.3 + Math.random() * 0.7,
+        target: 0.25 + Math.random() * 0.55,
         life: 0,
         maxLife: 400 + Math.random() * 400,
       };
@@ -45,7 +45,7 @@ export default function TextStorm() {
 
     const init = () => {
       particles = [];
-      for (let i = 0; i < 180; i++) particles.push(spawn());
+      for (let i = 0; i < 160; i++) particles.push(spawn());
     };
 
     const tick = () => {
@@ -57,19 +57,16 @@ export default function TextStorm() {
         p.y += p.vy;
         p.life++;
 
-        // Fade in / out
         if (p.life < 60) p.opacity = (p.life / 60) * p.target;
         else if (p.life > p.maxLife - 60) p.opacity = ((p.maxLife - p.life) / 60) * p.target;
         else p.opacity = p.target;
 
-        // Draw
         const fontSize = p.size * (0.6 + p.z * 0.8);
         ctx.font = `${fontSize}px "Instrument Serif", Georgia, serif`;
         ctx.fillStyle = `rgba(10, 10, 10, ${p.opacity})`;
         ctx.textBaseline = 'middle';
         ctx.fillText(p.char, p.x, p.y);
 
-        // Recycle
         if (p.life > p.maxLife || p.x < -50 || p.y > h + 50) {
           particles[i] = spawn();
         }
@@ -91,7 +88,8 @@ export default function TextStorm() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none"
+      className="absolute top-0 right-0 w-2/3 h-full pointer-events-none opacity-90"
+      style={{ zIndex: 0 }}
       aria-hidden="true"
     />
   );
