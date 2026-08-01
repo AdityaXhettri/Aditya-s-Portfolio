@@ -16,9 +16,9 @@ export default function About() {
           <div className="md:col-span-8 reveal">
             <p
               className="leading-snug mb-8"
-              style={{ ...SERIF, fontSize: 'clamp(1.25rem, 2.2vw, 1.75rem)', color: '#0a0a0a' }}
+              style={{ ...SERIF, fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)', color: '#0a0a0a' }}
             >
-              I'm a third-year <span style={{ fontStyle: 'italic', color: '#0a0a0a' }}>B.Tech Computer Science</span> student — building modern web applications, AI-powered solutions, and real-world software products.
+              <span style={{ backgroundColor: 'rgba(10, 10, 10, 0.12)', padding: '0 0.3em', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>I'm a third-year <span style={{ fontStyle: 'italic', color: '#0a0a0a' }}>B.Tech Computer Science</span> student — building modern web applications, AI-powered solutions, and real-world software products.</span>
             </p>
             <p className="text-neutral-800 leading-relaxed mb-6">
               I enjoy transforming ideas into functional digital products using clean code and modern technologies. My focus is on Full-Stack Development, Artificial Intelligence, Software Engineering, and Automation.
