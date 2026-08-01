@@ -10,13 +10,13 @@ export default function Hero() {
 
       {/* Content overlay */}
       <div className="relative max-w-6xl mx-auto px-6 pt-12" style={{ zIndex: 10 }}>
-        <div className="text-xs uppercase tracking-[0.3em] text-neutral-700 mb-6">
-          Portfolio · 2026
+        <div className="text-xs uppercase tracking-[0.3em] mb-6" style={{ color: '#0a0a0a' }}>
+          Aditya Chettri · Portfolio
         </div>
 
         <h1
           className="mb-8 max-w-5xl leading-[0.9]"
-          style={{ ...SERIF, fontSize: 'clamp(3rem, 10vw, 9rem)', color: '#0a0a0a' }}
+          style={{ ...SERIF, fontSize: 'clamp(2.5rem, 8vw, 7.2rem)', color: '#0a0a0a' }}
         >
           <span style={{ backgroundColor: 'rgba(10, 10, 10, 0.12)', padding: '0 0.3em', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>Where ideas</span>
           <br />
