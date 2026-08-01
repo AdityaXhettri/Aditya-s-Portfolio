@@ -2,40 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0a0a0f;
-  color: #e5e7eb;
+  background-color: #f5f1ea;
+  color: #0a0a0a;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
-.gradient-text {
-  background: linear-gradient(90deg, #a78bfa, #60a5fa, #a78bfa);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradient-x 6s ease infinite;
+.font-serif-display {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
-.glass {
-  background: rgba(22, 22, 35, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(167, 139, 250, 0.1);
-}
-
-.glow {
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
-}
-
-.grid-bg {
+.paper-bg {
+  background-color: #f5f1ea;
   background-image:
-    linear-gradient(rgba(167, 139, 250, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(167, 139, 250, 0.06) 1px, transparent 1px);
-  background-size: 50px 50px;
+    radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #0a0a0a;
+  color: #f5f1ea;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.btn-pill:hover {
+  background: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: gap 0.2s ease;
+}
+.btn-link:hover {
+  gap: 0.7rem;
+}
+
+.section-line {
+  border-top: 1px solid rgba(10, 10, 10, 0.1);
 }
 
 .reveal {
@@ -48,7 +70,12 @@ body {
   transform: translateY(0);
 }
 
+.italic-serif {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+}
+
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0a0a0f; }
-::-webkit-scrollbar-thumb { background: #2a2a3d; border-radius: 4px; }
+::-webkit-scrollbar-track { background: #f5f1ea; }
+::-webkit-scrollbar-thumb { background: #c8c2b5; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #8b5cf6; }

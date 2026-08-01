@@ -1,41 +1,36 @@
 export default function About() {
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-32 paper-bg">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-12 reveal">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">About <span className="gradient-text">Me</span></h2>
-          <div className="w-16 h-1 bg-accent-500 mx-auto rounded-full"></div>
-        </div>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="reveal">
-            <div className="aspect-square max-w-sm mx-auto rounded-2xl bg-gradient-to-br from-accent-500/30 to-blue-500/30 p-1 glow">
-              <div className="w-full h-full rounded-2xl bg-ink-800 flex items-center justify-center overflow-hidden">
-                <div className="text-7xl font-bold gradient-text">AC</div>
-              </div>
-            </div>
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4 reveal">
+            <div className="text-xs uppercase tracking-[0.3em] text-neutral-600 mb-4">About</div>
+            <div className="font-serif-display text-5xl text-ink">A brief<br /><span className="italic-serif">introduction.</span></div>
           </div>
-          <div className="reveal">
-            <p className="text-gray-300 text-lg leading-relaxed mb-4">
-              I'm a third-year <span className="text-white font-medium">B.Tech Computer Science Engineering</span> student passionate about building modern web applications, AI-powered solutions, and real-world software projects.
+
+          <div className="md:col-span-8 reveal">
+            <p className="text-xl md:text-2xl text-ink leading-snug mb-8 font-serif-display">
+              I'm a third-year <span className="italic-serif">B.Tech Computer Science</span> student — building modern web applications, AI-powered solutions, and real-world software products.
             </p>
-            <p className="text-gray-400 leading-relaxed mb-4">
-              I enjoy transforming ideas into functional digital products using clean code and modern technologies. My primary interests include Full-Stack Development, Artificial Intelligence, Software Engineering, and Automation.
+            <p className="text-neutral-700 leading-relaxed mb-6">
+              I enjoy transforming ideas into functional digital products using clean code and modern technologies. My focus is on Full-Stack Development, Artificial Intelligence, Software Engineering, and Automation.
             </p>
-            <p className="text-gray-400 leading-relaxed mb-6">
-              So far, I've delivered a <span className="text-accent-400 font-medium">live website for an NGO</span> — my first paid project — and built a football tournament management platform, gaining hands-on experience in responsive design, user-focused interfaces, and deployment.
+            <p className="text-neutral-700 leading-relaxed">
+              I delivered a <span className="italic-serif text-ink">live website for an NGO</span> as my first paid project, and built a football tournament management platform — gaining hands-on experience in responsive design, user-focused interfaces, and deployment.
             </p>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="glass p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold gradient-text">20+</div>
-                <div className="text-xs text-gray-400 mt-1">Projects Shipped</div>
+
+            <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-ink/10">
+              <div>
+                <div className="font-serif-display text-5xl text-ink">20+</div>
+                <div className="text-xs uppercase tracking-wider text-neutral-600 mt-2">Projects shipped</div>
               </div>
-              <div className="glass p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold gradient-text">1</div>
-                <div className="text-xs text-gray-400 mt-1">Paid Client</div>
+              <div>
+                <div className="font-serif-display text-5xl text-ink">1</div>
+                <div className="text-xs uppercase tracking-wider text-neutral-600 mt-2">Paid client</div>
               </div>
-              <div className="glass p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold gradient-text">3rd</div>
-                <div className="text-xs text-gray-400 mt-1">Year CSE</div>
+              <div>
+                <div className="font-serif-display text-5xl text-ink">3rd</div>
+                <div className="text-xs uppercase tracking-wider text-neutral-600 mt-2">Year CSE</div>
               </div>
             </div>
           </div>
