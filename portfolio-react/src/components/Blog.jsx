@@ -32,7 +32,7 @@ export default function Blog() {
           <div className="md:col-span-4">
             <div className="text-xs uppercase tracking-[0.3em] text-neutral-700 mb-4">Writings</div>
             <div style={{ ...SERIF, fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: '#0a0a0a', lineHeight: 1.05 }}>
-              Notes from <span style={{ fontStyle: 'italic' }}>the work.</span>
+              <span style={{ backgroundColor: 'rgba(10, 10, 10, 0.12)', padding: '0 0.3em', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>Notes from</span> <span style={{ fontStyle: 'italic' }}>the work.</span>
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ export default function Contact() {
         <div className="text-center mb-16 reveal">
           <div className="text-xs uppercase tracking-[0.3em] text-neutral-700 mb-4">Get in touch</div>
           <h2 style={{ ...SERIF, fontSize: 'clamp(3rem, 8vw, 6rem)', color: '#0a0a0a', lineHeight: 1, marginBottom: '1.5rem' }}>
-            Let's build <span style={{ fontStyle: 'italic' }}>together.</span>
+            <span style={{ backgroundColor: 'rgba(10, 10, 10, 0.12)', padding: '0 0.3em', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>Let's build <span style={{ fontStyle: 'italic', color: '#0a0a0a' }}>together.</span></span>
           </h2>
           <p className="text-neutral-800 max-w-xl mx-auto">
             Open to internships, freelance work, and collaboration. Drop a message — I usually reply within a day.

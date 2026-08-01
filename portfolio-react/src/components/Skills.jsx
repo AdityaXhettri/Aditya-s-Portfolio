@@ -41,7 +41,7 @@ export default function Skills() {
           <div className="md:col-span-4">
             <div className="text-xs uppercase tracking-[0.3em] text-neutral-700 mb-4">Stack</div>
             <div style={{ ...SERIF, fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: '#0a0a0a', lineHeight: 1.05 }}>
-              Tools I use to <span style={{ fontStyle: 'italic' }}>ship.</span>
+              <span style={{ backgroundColor: 'rgba(10, 10, 10, 0.12)', padding: '0 0.3em', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>Tools I use to</span> <span style={{ fontStyle: 'italic' }}>ship.</span>
             </div>
           </div>
         </div>

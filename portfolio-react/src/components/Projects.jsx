@@ -33,7 +33,7 @@ export default function Projects() {
           <div className="md:col-span-4">
             <div className="text-xs uppercase tracking-[0.3em] text-neutral-700 mb-4">Selected work</div>
             <div style={{ ...SERIF, fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: '#0a0a0a', lineHeight: 1.05 }}>
-              Things I've <span style={{ fontStyle: 'italic' }}>built.</span>
+              <span style={{ backgroundColor: 'rgba(10, 10, 10, 0.12)', padding: '0 0.3em', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>Things I've</span> <span style={{ fontStyle: 'italic' }}>built.</span>
             </div>
           </div>
         </div>
