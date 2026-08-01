@@ -24,7 +24,7 @@ const projects = [
     sub: 'Personal project',
     desc: 'Automation project integrating AI APIs for smart workflows. Prompt engineering and AI integrations.',
     tags: ['Python', 'FastAPI', 'AI API'],
-    cover: null,
+    cover: '/ai.png',
   },
 ];
 

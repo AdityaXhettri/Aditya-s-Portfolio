@@ -37,7 +37,7 @@ export default function Contact() {
         </div>
 
         <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6 reveal">
-          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+          <input type="hidden" name="access_key" value="706490ba-41ab-40e1-980e-03432711c802" />
           <input type="hidden" name="subject" value="New Portfolio Message" />
           <input type="checkbox" name="botcheck" className="hidden" />
 
