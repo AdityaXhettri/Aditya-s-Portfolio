@@ -15,11 +15,11 @@ export default function Hero() {
         </div>
 
         <h1
-          className="text-ink mb-8 max-w-5xl leading-[0.9]"
-          style={{ ...SERIF, fontSize: 'clamp(3rem, 10vw, 9rem)' }}
+          className="mb-8 max-w-5xl leading-[0.9]"
+          style={{ ...SERIF, fontSize: 'clamp(3rem, 10vw, 9rem)', color: '#0a0a0a' }}
         >
           Where ideas<br />
-          <span style={{ fontStyle: 'italic' }}>take shape.</span>
+          <span style={{ fontStyle: 'italic', color: '#0a0a0a' }}>take shape.</span>
         </h1>
 
         <div className="flex flex-wrap items-end justify-between gap-8 mt-12">
