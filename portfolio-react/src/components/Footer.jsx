@@ -11,9 +11,9 @@ export default function Footer() {
           © {new Date().getFullYear()} · Built with React, Vite, Bun.
         </div>
         <div className="flex items-center gap-4 text-sm">
-          <a href="#" className="btn-link text-neutral-800">GitHub</a>
-          <a href="#" className="btn-link text-neutral-800">LinkedIn</a>
-          <a href="mailto:your.email@example.com" className="btn-link text-neutral-800">Email</a>
+          <a href="https://github.com/AdityaXhettri" target="_blank" rel="noopener noreferrer" className="btn-link text-neutral-800">GitHub</a>
+          <a href="https://instagram.com/_aditya_chhetri__" target="_blank" rel="noopener noreferrer" className="btn-link text-neutral-800">Instagram</a>
+          <a href="mailto:aditya74949830@gmail.com" className="btn-link text-neutral-800">Email</a>
         </div>
       </div>
     </footer>
