@@ -50,7 +50,7 @@ export default function Skills() {
           {categories.map((cat) => (
             <div key={cat.n} className="grid grid-cols-[60px_1fr] md:grid-cols-[120px_1fr] gap-6 items-start">
               <div className="pt-1">
-                <div className="text-xs font-mono text-neutral-700">{cat.n}</div>
+                <div className="font-mono text-neutral-700" style={{ fontSize: '0.95rem' }}>{cat.n}</div>
               </div>
               <div>
                 <div className="text-sm uppercase tracking-widest mb-4 font-medium" style={{ color: '#0a0a0a' }}>{cat.title}</div>

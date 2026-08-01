@@ -35,7 +35,7 @@ export default function About() {
               </div>
               <div>
                 <div style={{ ...SERIF, fontSize: '3rem', color: '#0a0a0a', lineHeight: 1 }}>1</div>
-                <div className="text-xs uppercase tracking-wider text-neutral-700 mt-2">Paid client</div>
+                <div className="text-xs uppercase tracking-wider text-neutral-700 mt-2">Deloitte</div>
               </div>
               <div>
                 <div style={{ ...SERIF, fontSize: '3rem', color: '#0a0a0a', lineHeight: 1 }}>3rd</div>
