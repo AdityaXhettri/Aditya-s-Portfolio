@@ -8,7 +8,8 @@ export default function About() {
           <div className="md:col-span-4 reveal">
             <div className="text-xs uppercase tracking-[0.3em] text-neutral-700 mb-4">About</div>
             <div style={{ ...SERIF, fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: '#0a0a0a', lineHeight: 1.05 }}>
-              A brief<br />
+              <span style={{ backgroundColor: 'rgba(10, 10, 10, 0.12)', padding: '0 0.3em', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>A brief</span>
+              <br />
               <span style={{ fontStyle: 'italic' }}>introduction.</span>
             </div>
           </div>
@@ -18,7 +19,7 @@ export default function About() {
               className="leading-snug mb-8"
               style={{ ...SERIF, fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)', color: '#0a0a0a' }}
             >
-              <span style={{ backgroundColor: 'rgba(10, 10, 10, 0.12)', padding: '0 0.3em', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>I'm a third-year <span style={{ fontStyle: 'italic', color: '#0a0a0a' }}>B.Tech Computer Science</span> student — building modern web applications, AI-powered solutions, and real-world software products.</span>
+              I'm a third-year <span style={{ fontStyle: 'italic', color: '#0a0a0a' }}>B.Tech Computer Science</span> student — building modern web applications, AI-powered solutions, and real-world software products.
             </p>
             <p className="text-neutral-800 leading-relaxed mb-6">
               I enjoy transforming ideas into functional digital products using clean code and modern technologies. My focus is on Full-Stack Development, Artificial Intelligence, Software Engineering, and Automation.
